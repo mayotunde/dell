@@ -35,18 +35,7 @@ layer.bindPopup(feature.properties.COUNTRY)
 }}).addTo(pointsCluster);
 });
    
-var points = L.markerClusterGroup();
 
-
-$.getJSON('spots.geojson', function(data){
-var spots = L.geoJson(data, {
-pointToLayer: function(feature, layer){
-var marker = new L.marker(latlng);
-marker.bindPopup(feature.properties.COUNTRY);
-return marker;
-}}).addTo(points);
-});
-   
 map.addLayer(pointsCluster);
 </script>
 </body>
