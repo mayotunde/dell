@@ -27,7 +27,7 @@ maxZoom: 22}).addTo(map);
 
 var pointsCluster = L.markerClusterGroup();
 
-$.getJSON('https://cdn.rawgit.com/mayotunde/dell/master/spots.geojson', function(data){
+$.getJSON('https://cdn.rawgit.com/mayotunde/dell/master/GrazingSpots.json', function(data){
 var points = L.geoJson(data).addTo(pointsCluster);
 });
    
