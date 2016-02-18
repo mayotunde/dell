@@ -30,8 +30,9 @@ var pointsCluster = L.markerClusterGroup();
 
 $.getJSON('https://cdn.rawgit.com/mayotunde/dell/master/spots.geojson', function(data){
 var points = L.geoJson(data, {
-onEachFeature: function(feature, layer){
-layer.bindPopup(feature.properties.COUNTRY)
+	pointToLayer: function(feature, latlng){
+		marker = L.marker(latlng)
+		marker.bindPopup(feature.properties.HeadCount)
 }}).addTo(pointsCluster);
 });
    
