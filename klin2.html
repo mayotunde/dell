@@ -22,18 +22,13 @@ mapLink =
 L.tileLayer(
 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: ' &copy; ' + mapLink,
-maxZoom: 22,
-}).addTo(map);
+maxZoom: 22}).addTo(map);
 
 
 var pointsCluster = L.markerClusterGroup();
 
 $.getJSON('https://cdn.rawgit.com/mayotunde/dell/master/spots.geojson', function(data){
-var points = L.geoJson(data, {
-	pointToLayer: function(feature, latlng){
-		marker = L.marker(latlng)
-		marker.bindPopup(feature.properties.HeadCount)
-}}).addTo(pointsCluster);
+var points = L.geoJson(data).addTo(pointsCluster);
 });
    
 
