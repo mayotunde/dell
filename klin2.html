@@ -17,8 +17,7 @@
 <script>
 var map = L.map('map').setView([4.35, 3.880], 6);
 attr = '<a href="http://openstreetmap.org">openstreetmap</a>,'+'<a href="http://mapsnigeriainitiative.wordpress.com">mapsNI</a>';
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-attribution: ' &copy; ' + attr,maxZoom: 18}).addTo(map);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 
 var pointsCluster = L.markerClusterGroup();
