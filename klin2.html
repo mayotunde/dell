@@ -23,12 +23,7 @@ attribution: ' &copy; ' + attr,maxZoom: 18}).addTo(map);
 
 var pointsCluster = L.markerClusterGroup();
 $.getJSON("https://cdn.rawgit.com/mayotunde/dell/master/spots.geojson", function(data){
-var poly = L.geoJson(data, {
-pointToLayer: function(feature, latlng){
-marker = L.marker(latlng)
-marker.bindPopup(feature.properties.HeadCount)
-return marker
-}}).addTo(pointsCluster);
+var poly = L.geoJson(data).addTo(pointsCluster);
 });
 map.addLayer(pointsCluster);
 </script>
